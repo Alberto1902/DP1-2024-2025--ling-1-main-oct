@@ -95,6 +95,7 @@ The system relies on a dice-based mechanic to track players' progress and determ
     Person --|> BaseEntity : extends
     Statistics --|> BaseEntity: extends
     Authorities --|> BaseEntity : extends
+    TypeOfUser --|> BaseEntity : extends
     Achievement --|> NamedEntity : extends
     Friendship --|> BaseEntity : extends
     User"*" --> "1"Authorities
