@@ -1,0 +1,415 @@
+.container {
+    margin: 10px;
+}
+
+
+
+@keyframes rolling {
+    100% {
+        transform: rotateX(1050deg) rotateY(1050deg);
+    }
+}
+
+.face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 5px solid #f6f3f0;
+    border-radius: 20px;
+    background: linear-gradient(145deg, 
+    #dddbd8,#fff);
+    transform-style: preserve-3d;
+}
+.face::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: #f6f3f0;
+    transform: translateZ(-1px);
+}
+.face::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    background: #000;
+    border-radius: 50%;
+}
+.front{
+    transform: translateZ(50px);
+}
+.back{
+    transform: rotateX(180deg) translateZ(50px);
+}
+.top{
+    transform: rotateX(90deg) translateZ(50px);
+}
+.bottom{
+    transform: rotateX(-90deg) translateZ(50px);
+}
+.right{
+    transform: rotateY(90deg) translateZ(50px);
+}
+.left{
+    transform: rotateY(-90deg) translateZ(50px);
+}
+.front::after{
+    width: 30px;
+    height: 30px;
+    background: #000;
+    margin: -15px 0 0 -15px;
+}
+.back::after{
+    margin: -35px 0 0 -30px;
+    box-shadow: 40px 0,
+    0 25px,
+    40px 25px,
+    0 50px,
+    40px 50px;
+}
+.top::after{
+    margin: -30px 0 0 -30px;
+    box-shadow: 40px 40px;
+}
+.bottom::after{
+    margin: -36px 0 0 -36px;
+    box-shadow: 26px 26px,
+    52px 52px,
+    52px 0,
+    0 52px;
+}
+.right::after{
+    margin: -30px 0 0 -30px;
+    box-shadow: 40px 0,
+    0 40px,
+    40px 40px;
+}
+.left::after{
+    margin: -35px 0 0 -35px;
+    box-shadow: 25px 25px,
+    50px 50px;
+}
+.roll{
+    color: rgba(221,50,125);
+    margin-top: 60px;
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid rgba(221,50,125);
+    cursor: pointer;
+}
+.roll:hover{
+    color: #fff;
+    background: rgba(221,50,125);
+} 
+
+.napoleonic-button {
+    position: relative;
+    top: 40px;
+    left: 50px;
+    padding: 15px 50px;
+    color: #5B4636;
+    /* Marrón suave para el texto */
+    background-color: #E9D8A6;
+    /* Tono de pergamino */
+    border: 2px solid #B9A074;
+    /* Borde de dorado antiguo */
+    font-size: 40px;
+    font-family: 'Garamond', serif;
+    /* Fuente clásica */
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.2), 3px 3px 8px rgba(0, 0, 0, 0.3);
+    outline: none;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    /* Sombra de texto para relieve */
+}
+
+.napoleonic-button:hover,
+.end-turnbutton:active {
+    background-color: #D4C2A0;
+    /* Color pergamino más oscuro en hover */
+    border-color: #A58A64;
+    /* Borde más oscuro al hacer hover */
+    color: #3F2D20;
+    /* Texto más oscuro */
+    cursor: pointer;
+    transform: translateY(3px);
+    box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.3), 5px 5px 10px rgba(0, 0, 0, 0.4);
+    /* Sombra adicional para relieve */
+}.dice-container {
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    margin-bottom: 0;
+    margin-right: 10vh;
+}
+
+
+.dice {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    animation-fill-mode: forwards;
+
+}
+
+.dice-one {
+    position: absolute;
+    left: -50px;
+}
+
+.dice-two {
+    position: absolute;
+    left: 150px;  
+}
+
+.facetwo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 5px solid #f6f3f0;
+    border-radius: 20px;
+    background: linear-gradient(145deg, 
+    #dddbd8,#fff);
+    transform-style: preserve-3d;
+}.face-two {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 5px solid #3a3a3a; /* Borde gris oscuro */
+    border-radius: 20px;
+    background: linear-gradient(145deg, #2b2b2b, #3a3a3a); /* Gradiente negro grisáceo */
+    transform-style: preserve-3d;
+}
+.face-two::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    background: #dfd8d8; /* Rojo */
+    border-radius: 50%;
+}
+
+/* Cara frontal del dado two */
+.front-two::after {
+    width: 30px;
+    height: 30px;
+    background: #dfd8d8; /* Rojo */
+    margin: -15px 0 0 -15px;
+}
+
+/* Cara trasera del dado two */
+.back-two::after {
+    background: #dfd8d8; /* Rojo */
+    margin: -35px 0 0 -30px;
+    box-shadow: 
+        40px 0 #dfd8d8,
+        0 25px #dfd8d8,
+        40px 25px #dfd8d8,
+        0 50px #dfd8d8,
+        40px 50px #dfd8d8; /* Puntos de la cara trasera en rojo */
+}
+
+/* Cara superior del dado two */
+.top-two::after {
+    margin: -30px 0 0 -30px;
+    background: #dfd8d8; /* Rojo */
+    box-shadow: 
+        40px 40px #dfd8d8; /* Puntos de la cara superior en rojo */
+}
+
+/* Cara inferior del dado two */
+.bottom-two::after {
+    margin: -36px 0 0 -36px;
+    background: #dfd8d8; /* Rojo */
+    box-shadow: 
+        26px 26px #dfd8d8,
+        52px 52px #dfd8d8,
+        52px 0 #dfd8d8,
+        0 52px #dfd8d8; /* Puntos de la cara inferior en rojo */
+}
+
+/* Cara derecha del dado two */
+.right-two::after {
+    margin: -30px 0 0 -30px;
+    background: #dfd8d8; /* Rojo */
+    box-shadow: 
+        40px 0 #dfd8d8,
+        0 40px #dfd8d8,
+        40px 40px #dfd8d8; /* Puntos de la cara derecha en rojo */
+}
+
+/* Cara izquierda del dado two */
+.left-two::after {
+    margin: -35px 0 0 -35px;
+    background: #dfd8d8; /* Rojo */
+    box-shadow: 
+        25px 25px #dfd8d8,
+        50px 50px #dfd8d8; /* Puntos de la cara izquierda en rojo */
+}
+
+.front-two {
+    transform: translateZ(50px);
+}
+
+.back-two {
+    transform: rotateX(180deg) translateZ(50px);
+}
+
+.top-two {
+    transform: rotateX(90deg) translateZ(50px);
+}
+
+.bottom-two {
+    transform: rotateX(-90deg) translateZ(50px);
+}
+
+.right-two {
+    transform: rotateY(90deg) translateZ(50px);
+}
+
+.left-two {
+    transform: rotateY(-90deg) translateZ(50px);
+}
+
+.front-two::after {
+    width: 30px;
+    height: 30px;
+    background: #dfd8d8; /* Rojo */
+    margin: -15px 0 0 -15px;
+}
+
+.back-two::after {
+    background: #dfd8d8; /* Rojo */
+
+    margin: -35px 0 0 -30px;
+    box-shadow: 40px 0#dfd8d8,
+                0 25px#dfd8d8,
+                40px 25px#dfd8d8,
+                0 50px#dfd8d8,
+                40px 50px#dfd8d8; /* Puntos de la cara trasera */
+}
+
+.top-two::after {
+    margin: -30px 0 0 -30px;    background: #dfd8d8; /* Rojo */
+
+    box-shadow: 40px 40px#dfd8d8 ; /* Puntos de la cara superior */
+}
+
+.bottom-two::after {
+    margin: -36px 0 0 -36px;    background: #dfd8d8; /* Rojo */
+
+    box-shadow: 26px 26px#dfd8d8,
+                52px 52px#dfd8d8,
+                52px 0#dfd8d8,
+                0 52px#dfd8d8; /* Puntos de la cara inferior */
+}
+
+.right-two::after {
+    margin: -30px 0 0 -30px;    background: #dfd8d8; /* Rojo */
+
+    box-shadow: 40px 0#dfd8d8,
+                0 40px#dfd8d8,
+                40px 40px#dfd8d8; /* Puntos de la cara derecha */
+}
+
+.left-two::after {
+    margin: -35px 0 0 -35px;    background: #dfd8d8; /* Rojo */
+
+    box-shadow: 25px 25px #dfd8d8,
+                50px 50px #dfd8d8; /* Puntos de la cara izquierda */
+}
+
+
+.diced {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    animation-fill-mode: forwards;
+}
+
+.diced-one {
+    position: absolute;
+}
+
+.diced-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.fight-info p {
+    margin: 30px 0;
+}
+
+
+.dice-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem; /* Incrementa el espacio para mayor claridad */
+}
+
+.dice-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.fight-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fight-modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.fight-modal-header {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.fight-modal-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.escape-modal .die-style {
+    margin: 10px auto;
+    display: block;
+}
+.escape-modal-body {
+    padding: 20px;
+}
+.success-message {
+    color: green;
+}
+.failure-message {
+    color: red;
+}
+

@@ -1,0 +1,134 @@
+.statistics-container {
+    width: 100%;
+    max-width: 800px;
+    max-height: 800px;
+    margin: 2rem auto !important;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3) !important;
+    color: #000 !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  .header-section {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .statistics-title {
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+    margin: 0 !important;
+    color: #000 !important;
+  }
+  
+  .statistics-table-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 1rem;
+    align-items: stretch;
+    height: auto;
+  }
+  
+  .left-tables-container {
+    /* Forzamos a ocupar toda la altura asignada por el grid */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Ajusta si quieres espacio interno entre tablas */
+    gap: 1rem;
+  }
+  
+  .table-section {
+    background-color: #fff !important;
+    padding: 0.5rem !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) !important;
+    flex: 1 1 300px; /* para que se adapten y no se amontonen */
+  }
+  
+  .custom-table {
+    width: 100% !important;
+    margin: 0 auto !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    font-size: 0.9rem !important;
+    table-layout: fixed !important;
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    vertical-align: middle !important;
+    text-align: center !important;
+    padding: 0.2rem !important;
+    color: #000 !important;
+    border-bottom: 1px solid #ddd !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  
+  .custom-table thead tr {
+    background-color: #007bff !important;
+    color: #fff !important;
+  }
+  
+  .stats-image {
+    height: 30px !important;
+  }
+  
+  .right-charts-container {
+    display: flex;
+    flex-direction: column;
+    /* Para ocupar todo el alto posible de su columna */
+    height: 100%;
+    gap: 1rem;
+  }
+  
+  .winrate-container,
+  .achievement-container {
+    /* Se reparten el espacio vertical por igual */
+    flex: 1;
+    width: 100%;
+    background-color: #f8f9fa !important;
+    padding: 1rem !important;
+    border-radius: 7px !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) !important;
+    text-align: center;
+  }
+  
+  .winrate-text {
+    font-weight: bold !important;
+    margin-top: 0.5rem !important;
+    color: #000 !important;
+  }
+  
+  .chart-container {
+    gap: 1rem!important;
+    align-items: stretch!important;
+    height: auto!important;
+    text-align: center !important;
+    background-color: #f8f9fa !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  .bar-label {
+    fill: #000 !important;
+    font-size: 0.8rem !important;
+  }
+  
+  button.btn.btn-primary {
+    background-color: #007bff !important;
+    border-color: #007bff !important;
+    font-weight: bold !important;
+    font-size: 0.9rem !important;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) !important;
+    width: auto !important; /* Para que no se estire */
+    white-space: nowrap !important;
+  }
+  

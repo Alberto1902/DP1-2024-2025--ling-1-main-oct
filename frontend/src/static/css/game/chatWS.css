@@ -1,0 +1,93 @@
+.chat-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .chat-container {
+    width: 500px;
+    max-width: 90%;
+    height: 600px;
+    background: #f5f3e6; /* Fondo estilo pergamino */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .chat-header {
+    background: #4b4128; /* Color dorado */
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .messages-container {
+    flex: 1;
+    overflow-y: auto; /* Habilitar scroll vertical si el contenido excede el alto */
+    padding: 10px;
+    word-wrap: break-word; /* Rompe las palabras largas si es necesario */
+    overflow-wrap: break-word; /* Alternativa para navegadores modernos */
+    white-space: pre-wrap; /* Respeta saltos de línea y ajusta el texto */
+  }
+  
+  .message {
+    margin-bottom: 10px; /* Separación entre mensajes */
+    line-height: 1.4; /* Mejorar la legibilidad */
+    word-wrap: break-word; /* Rompe palabras largas */
+    overflow-wrap: break-word; /* Asegura compatibilidad con todos los navegadores */
+    white-space: pre-wrap; /* Respeta los saltos de línea */
+  }
+  
+  
+  .input-container {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    background: #eae6d7;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  
+  input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-family: "Arial", sans-serif;
+  }
+  
+  button {
+    background: #4b4128;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background: #272525;
+  }
+  

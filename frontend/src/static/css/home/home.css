@@ -1,0 +1,244 @@
+/* Centrado del fondo con video o imagen */
+.home-page-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; /* Asegúrate de que los elementos principales tengan z-index superior */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Oculta cualquier desbordamiento */
+}
+
+/* Hero Section */
+.hero-div {
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo translúcido más visible */
+  padding: 3rem; /* Aumenta el padding */
+  border-radius: 25px;
+  backdrop-filter: blur(15px); /* Efecto de desenfoque */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Añade una sombra */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%; /* Limita el ancho */
+  text-align: center;
+}
+
+.hero-div h1 {
+  font-size: 3.5rem; /* Aumenta el tamaño de la fuente */
+  font-weight: 700;
+  color: #2f324f;
+  margin-bottom: 1rem; /* Espaciado inferior */
+  text-transform: uppercase;
+}
+
+.hero-div h3 {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem; /* Espaciado inferior */
+}
+
+/* Botones con hover effect */
+.hover-effect {
+  padding: 1rem 2rem; /* Tamaño adecuado */
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background-color: #2f324f; /* Color base */
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease, background-color 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: scale(1.1); /* Escala ligera */
+  background-color: #555; /* Oscurece el fondo al pasar el ratón */
+  filter: drop-shadow(0 0 15px rgba(211, 204, 167, 0.8)); /* Resplandor dorado */
+}
+
+/* Diseño de notificaciones */
+.notification-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.notification {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0.95;
+  animation: fadeOut 5s ease-in-out forwards;
+}
+
+.table-container {
+  border-radius: 10px; /* Ajusta el radio según sea necesario */
+  overflow: hidden; /* Asegúrate de que el contenido no se salga de los bordes redondeados */
+}
+
+.table-container table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%; /* Asegúrate de que la tabla ocupe el ancho completo */
+}
+
+.table-container thead, .table-container tfoot {
+  background-color: white; /* Asegúrate de que el encabezado y pie de página no se desplacen */
+  border-top-left-radius: 3vh;
+  border-top-right-radius: 3vh;
+}
+
+.table-container tbody {
+  display: block;
+  max-height: 55vh; /* Ajusta la altura máxima según sea necesario */
+  overflow-y: auto; /* Permite el scroll vertical */
+}
+
+.table-container tbody::-webkit-scrollbar {
+  width: 0; /* Oculta la barra de desplazamiento en WebKit */
+}
+
+.table-container tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.table-container thead, .table-container tfoot {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.table-container th:first-child {
+  border-top-left-radius: 10px; /* Ajusta el radio según sea necesario */
+}
+
+.table-container th:last-child {
+  border-top-right-radius: 10px; /* Ajusta el radio según sea necesario */
+}
+
+.table-container tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 10px; /* Ajusta el radio según sea necesario */
+}
+
+.table-container tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 10px; /* Ajusta el radio según sea necesario */
+}
+/* Contenedor principal */
+.landing-page {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Centra el texto dentro del contenido */
+  height: 100vh; /* Altura completa de la pantalla */
+  overflow: hidden; /* Evita que elementos se desborden */
+}
+
+/* Video de fondo */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que el video cubra toda la pantalla */
+  z-index: -1; /* Envía el video detrás del contenido */
+}
+/* Contenedor principal */
+.landing-page {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Centra el texto dentro del contenido */
+  height: 100vh; /* Altura completa de la pantalla */
+  overflow: hidden; /* Oculta desbordamientos */
+}
+
+/* Video de fondo */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que el video cubra toda la pantalla */
+  z-index: -1; /* Envía el video detrás del contenido */
+}
+
+/* Contenedor del contenido */
+.landing-content {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco translúcido */
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Añade una sombra elegante */
+  max-width: 450px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los elementos dentro del contenedor */
+  gap: 20px;
+}
+
+/* Logo */
+.landing-logo {
+  width: 250px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Subtítulo */
+.landing-subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* Contenedor de botones */
+.landing-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Botones */
+.landing-button {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.landing-button.register {
+  background-color: #38c172; /* Verde */
+  color: white;
+}
+
+.landing-button.register:hover {
+  background-color: #2fa659;
+}
+
+.landing-button.login {
+  background-color: #3490dc; /* Azul */
+  color: white;
+}
+
+.landing-button.login:hover {
+  background-color: #2779bd;
+}

@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "start:backend": "mvnw spring-boot:run && cd DP1-2024-2025--ling-1",
+    "start:frontend": "cd frontend && npm start",
+    "install:aditional": "cd frontend && npm install react-color && npm install d3 "
+  }
+}

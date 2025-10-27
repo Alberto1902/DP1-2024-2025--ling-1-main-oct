@@ -1,0 +1,43 @@
+.easter-egg-text {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 2rem; /* Ajusta el tamaño según prefieras */
+    text-shadow: 2px 2px 0 black, -2px -2px 0 black, -2px 2px 0 black, 2px -2px 0 black;
+    font-weight: bold;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Opcional: añade un fondo semitransparente */
+}.notification-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.notification {
+    display: inline-block;
+    max-width: 170px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    word-wrap: break-word; /* Ajusta texto largo */
+    margin-bottom: 10px; /* Espaciado entre notificaciones */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.notification-container .notification.hide {
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.notification-container .notification:hover {
+    background: rgba(50, 50, 50, 0.9);
+}

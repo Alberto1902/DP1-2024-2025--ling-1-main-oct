@@ -1,0 +1,56 @@
+.modal-content {
+  max-width: 500px; /* Define un ancho máximo para el modal */
+  width: 90%; /* Ancho relativo para pantallas más pequeñas */
+  margin: 0 auto; /* Centra el modal */
+  height: auto; /* Ajusta la altura automáticamente */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* Contenedor de cartas */
+.selected-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cartas por fila */
+  justify-items: center; /* Centrar las cartas horizontalmente */
+  align-items: center;
+  max-height: 300px; /* Limitar la altura */
+}
+
+
+/* Carta individual */
+.modal-card {
+  cursor: grab;
+  width: 70px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-card img {
+  width: 90%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.modal-card:active {
+  cursor: grabbing;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dragging {
+  opacity: 0.5;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.custom-modal-content {
+  max-width: 500px;
+  width: 90%;
+  margin: 0 auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}

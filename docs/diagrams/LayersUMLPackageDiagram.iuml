@@ -1,0 +1,80 @@
+@startuml
+!theme vibrant
+skinparam componentStyle rectangle
+
+
+package "Presentation Layer" {
+component CardController
+component DeckController
+component AuthController
+component FriendshipController
+component GameSessionController
+component UserController
+component PieceController
+component PlayerController
+component SquareController
+component AchievementController
+
+}
+
+package "Business Logic Layer" {
+    component CardService
+    component DeckService
+    component AuthService
+    component FriendshipService
+    component AchievementService
+    component GameSessionService
+    component UserService
+    component PieceService
+    component PlayerService
+    component SquareService
+component AuthoritiesService
+}
+
+package "Resource Layer" {
+    component CardRepository
+    component DeckRepository
+    component FriendshipRepository
+    component GameSessionRepository
+    component PieceRepository
+    component PlayerRepository
+    component SquareRepository
+    component AchievementRepository
+    component UserRepository
+component AuthoritiesRepository
+}
+
+' Definir relaciones entre las capas
+CardController ..> CardService
+AuthController .....> UserService
+AuthController ..> AuthService
+DeckController ..> DeckService
+FriendshipController ..> FriendshipService
+FriendshipController ....> UserService
+GameSessionController ..> GameSessionService
+GameSessionController .> UserService
+AchievementController ..> AchievementService
+PieceController ..> PieceService
+PieceController ..> PlayerService
+PieceController ....> UserService
+PieceController ..> SquareService
+PlayerController ..> PlayerService
+PlayerController ..> GameSessionService
+SquareController ..> SquareService
+UserController ..> UserService
+UserController ..> AchievementService
+UserService <.. AuthService
+AuthoritiesService <.. AuthService
+
+AchievementService ...> AchievementRepository
+CardService .....> CardRepository
+DeckService ......> DeckRepository
+FriendshipService ..> FriendshipRepository
+FriendshipService ..> UserRepository
+GameSessionService ..> GameSessionRepository
+PieceService ..> PieceRepository
+PlayerService ..> PlayerRepository
+SquareService ..> SquareRepository
+UserService ..> UserRepository
+AuthoritiesService ..> AuthoritiesRepository
+@enduml

@@ -1,0 +1,652 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-image: url('../../images/background-game.jpg');
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen en el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+
+.game-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Envía el video al fondo */
+}
+
+
+.game-board-wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+
+.upper-bar-container {
+    background-color: white;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.home-button {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    cursor: pointer;
+    background-color: #ccc;
+    border: none;
+    border-radius: 50%;
+    /* Hacer el botón circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: grayscale(100%);
+    /* Escala de grises */
+    position: absolute;
+    left: 10px;
+    /* Separación de 10px desde el borde izquierdo */
+    transition: background-color 0.3s;
+}
+
+.home-button:hover {
+    background-color: #999;
+    /* Cambio de color al pasar el mouse */
+}
+
+/* Ícono SVG de casa en negro */
+.home-button::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"%3E%3Cpath d="M12 2.69l-9.34 8.46c-.39.35-.66.83-.66 1.36v9.49c0 .83.67 1.5 1.5 1.5h5c.83 0 1.5-.67 1.5-1.5v-4h4v4c0 .83.67 1.5 1.5 1.5h5c.83 0 1.5-.67 1.5-1.5v-9.49c0-.53-.27-1.01-.66-1.36L12 2.69zm0 1.44L20 11.18V21h-5v-5h-6v5H4v-9.82l8-7.05z"/%3E%3C/svg%3E');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.chat-button {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    cursor: pointer;
+    background-color: #ccc;
+    border: none;
+    border-radius: 50%; /* Hacer el botón circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: grayscale(100%); /* Escala de grises */
+    position: absolute;
+    left: 70px; /* Separación respecto al botón de inicio */
+    transition: background-color 0.3s;
+}
+
+.chat-button:hover {
+    background-color: #999; /* Cambio de color al pasar el mouse */
+}
+
+/* Ícono SVG de chat */
+.chat-button::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"%3E%3Cpath d="M12 3C6.48 3 2 6.58 2 11c0 2.26 1.27 4.32 3.31 5.76-.37 1.53-1.32 3.48-1.35 3.54-.08.16-.11.34-.04.51.07.17.2.3.36.38.12.06.25.09.38.09.14 0 .28-.04.4-.11.11-.06 2.6-1.48 3.93-2.31.98.27 2.03.42 3.11.42 5.52 0 10-3.58 10-8s-4.48-8-10-8zm0 14c-.98 0-1.91-.14-2.79-.41l-.38-.12-.33.2c-.74.46-1.9 1.17-2.76 1.64.22-.46.52-1.06.74-1.64l.15-.38-.32-.23C5.26 15.07 4 13.11 4 11c0-3.32 3.58-6 8-6s8 2.68 8 6-3.58 6-8 6z"/%3E%3C/svg%3E');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.invite-button {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    cursor: pointer;
+    background-color: #ccc;
+    border: none;
+    border-radius: 50%; /* Hacer el botón circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: grayscale(100%); /* Escala de grises */
+    transition: background-color 0.3s;
+}
+
+.invite-button:hover {
+    background-color: #999; /* Cambio de color al pasar el mouse */
+}
+
+/* Ícono SVG de invitación en negro */
+.invite-button::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"%3E%3Cpath d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 11 4 6.01V6h16zM4 8l8 5 8-5v10H4V8z"/%3E%3C/svg%3E');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.dropdown-container {
+    position: absolute;
+    left: 130px;
+}
+
+
+.game-page-container {
+    margin-top: 10vh;
+}
+
+.game-board-container {
+    flex: 1;
+    width: 110vh;
+    margin-top: 5vh;
+    height: auto;
+    /* Ajusta la altura según necesites */
+    text-align: center;
+    position: absolute;
+    /* Permite usar las propiedades de top, left */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Traslada el contenedor a su punto medio */
+    pointer-events: auto;
+    /* Asegurarnos de que los eventos de puntero sean permitidos */
+}
+
+.start-button-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+}
+
+.start-game-button {
+    font-size: 36px;
+    color: #f1f1f1;
+    background-color: #918157;
+    border: 4px solid #4b4128;
+    border-radius: 12px;
+    padding: 20px 50px;
+    width: auto;
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    text-shadow: 1px 1px 4px #000000;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6), inset 0 0 10px #8B5A2B;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.start-game-button:hover {
+    background-color: #918157;
+    border: 4px solid #4b4128;
+    transform: translate(-50%, -50%) scale(1.1) rotate(-2deg);
+    box-shadow:
+        0px 0px 20px rgba(248, 248, 248, 0.8),
+        0px 0px 40px rgba(124, 124, 124, 0.9),
+        inset 0 0 20px #cab170;
+    color: #ffffff;
+}
+
+
+.game-board-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.game-square {
+    position: absolute;
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 3vh;
+    height: 3vh;
+    opacity: 0.7;
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: auto;
+    /* Asegurar que las casillas permiten el clic */
+}
+
+.players-container ul {
+    display: flex;
+    gap: 20px;
+    /* Espacio entre cada jugador */
+    list-style-type: none;
+    /* Elimina los puntos de lista */
+    padding: 0;
+    margin: 0;
+}
+
+.players-container .profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.players-container li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.edges-svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+.highlighted-piece {
+    box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.6);
+    /* Agrega un resplandor dorado */
+    transform: scale(5.1);
+    /* Aumenta ligeramente el tamaño de la pieza */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* Añade una transición suave */
+}
+
+
+.highlighted-square {
+    background-color: rgba(0, 255, 0, 0.5);
+}
+
+
+.highlighted-neighbor {
+    background-color: grey;
+    opacity: 0.5;
+}
+
+.player-piece {
+    position: absolute;
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    z-index: 4;
+    /* Aseguramos que las piezas estén siempre encima de los demás elementos */
+    pointer-events: auto;
+    /* Asegurarnos de que las piezas permiten el clic */
+}
+
+/*Dices*/
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    /* Absolute positioning for bottom-right alignment */
+    bottom: 10vh;
+    /* Space from the bottom of the screen */
+    right: 10vh;
+    /* Space from the right of the screen */
+    margin-right: 5vh;
+    /* Reset margin-right */
+    margin-bottom: 0;
+    /* Reset margin-bottom */
+}
+
+.game-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3vh;
+    align-items: center;
+    position: absolute;
+    /* Absolute positioning for bottom-right alignment */
+    bottom: 10vh;
+    /* Space from the bottom of the screen */
+    right: 10vh;
+    /* Space from the right of the screen */
+    margin-right: 5vh;
+    /* Reset margin-right */
+    margin-bottom: 0;
+    /* Reset margin-bottom */
+}
+
+/* Estilo para cada contenedor de dado */
+.container {
+    margin: 10px;
+}
+
+.dice {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin: -10px 5px 5px -10px;
+    border-radius: 20px;
+    background-color: #f25f5c;
+    box-shadow: inset 2px 2px #d90429;
+}
+
+.dot-black {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin: -10px 5px 5px -10px;
+    border-radius: 20px;
+    background-color: #fff1f1;
+    box-shadow: inset 2px 2px #b6b6b6;
+}
+
+.dice-one {
+    position: absolute;
+    left: 150px;
+}
+
+.dice-two {
+    position: absolute;
+    left: -50px;
+
+}
+
+.side {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #e5e5e5;
+    text-align: center;
+    line-height: 2em;
+}
+
+.side-black {
+    position: absolute;
+    background-color: #272525;
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #1d1d1d;
+    text-align: center;
+    line-height: 2em;
+}
+
+.side:nth-child(1) {
+    transform: translateZ(3.1em);
+}
+
+.side:nth-child(6) {
+    transform: rotateY(90deg) translateZ(3.1em);
+}
+
+.side:nth-child(3) {
+    transform: rotateY(-90deg) translateZ(3.1em);
+}
+
+.side:nth-child(4) {
+    transform: rotateX(90deg) translateZ(3.1em);
+}
+
+.side:nth-child(5) {
+    transform: rotateX(-90deg) translateZ(3.1em);
+}
+
+.side:nth-child(2) {
+    transform: rotateY(-180deg) translateZ(3.1em);
+}
+
+.side-black:nth-child(1) {
+    transform: translateZ(3.1em);
+}
+
+.side-black:nth-child(6) {
+    transform: rotateY(90deg) translateZ(3.1em);
+}
+
+.side-black:nth-child(3) {
+    transform: rotateY(-90deg) translateZ(3.1em);
+}
+
+.side-black:nth-child(4) {
+    transform: rotateX(90deg) translateZ(3.1em);
+}
+
+.side-black:nth-child(5) {
+    transform: rotateX(-90deg) translateZ(3.1em);
+}
+
+.side-black:nth-child(2) {
+    transform: rotateY(-180deg) translateZ(3.1em);
+}
+
+.show-1 {
+    transform: rotateX(720deg) rotateZ(-720deg);
+}
+
+.show-2 {
+    transform: rotateX(450deg) rotateZ(-720deg);
+}
+
+.show-3 {
+    transform: rotateY(-450deg) rotateZ(-1440deg);
+}
+
+.show-4 {
+    transform: rotateY(810deg) rotateZ(720deg);
+}
+
+.show-5 {
+    transform: rotateX(-810deg) rotateZ(-1080deg);
+}
+
+.show-6 {
+    transform: rotateX(-900deg) rotateZ(1080deg);
+}
+
+.two-1,
+.three-1,
+.four-1,
+.five-1,
+.six-1 {
+    top: 20%;
+    left: 20%;
+}
+
+.four-3,
+.five-3,
+.six-4 {
+    top: 20%;
+    left: 80%;
+}
+
+.one-1,
+.three-2,
+.five-5 {
+    top: 50%;
+    left: 50%;
+}
+
+.four-2,
+.five-2,
+.six-3 {
+    top: 80%;
+    left: 20%;
+}
+
+.two-2,
+.three-3,
+.four-4,
+.five-4,
+.six-6 {
+    top: 80%;
+    left: 80%;
+}
+
+.six-2 {
+    top: 50%;
+    left: 20%;
+}
+
+.six-5 {
+    top: 50%;
+    left: 80%;
+}
+
+
+.napoleonic-button {
+    position: relative;
+    top: 40px;
+    left: 50px;
+    padding: 15px 50px;
+    color: #5B4636;
+    /* Marrón suave para el texto */
+    background-color: #E9D8A6;
+    /* Tono de pergamino */
+    border: 2px solid #B9A074;
+    /* Borde de dorado antiguo */
+    font-size: 40px;
+    font-family: 'Garamond', serif;
+    /* Fuente clásica */
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.2), 3px 3px 8px rgba(0, 0, 0, 0.3);
+    outline: none;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    /* Sombra de texto para relieve */
+}
+
+.napoleonic-button:hover,
+.end-turnbutton:active {
+    background-color: #D4C2A0;
+    /* Color pergamino más oscuro en hover */
+    border-color: #A58A64;
+    /* Borde más oscuro al hacer hover */
+    color: #3F2D20;
+    /* Texto más oscuro */
+    cursor: pointer;
+    transform: translateY(3px);
+    box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.3), 5px 5px 10px rgba(0, 0, 0, 0.4);
+    /* Sombra adicional para relieve */
+}
+
+.dice-container {
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    margin-bottom: 0;
+    margin-right: 10vh;
+}
+
+.player-piece {
+    position: absolute;
+    z-index: 2;
+    border-radius: 50%;
+    height: 8vh;
+    width: 8vh;
+    cursor: pointer;
+}
+
+/* Cursor cambiado si no pertenece al usuario actual */
+.player-piece:not([data-user='true']) {
+    cursor: default;
+}
+
+.highlighted-square {
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(227, 110, 26, 0.486);
+    border-radius: 50%;
+    height: 5vh;
+    width: 5vh;
+    cursor: pointer;
+}
+
+.highlight-circles {
+
+    border-radius: 50%;
+    height: '9vh';
+    width: '9vh';
+    position: 'absolute';
+    top: '-0.5vh';
+    left: '-0.5vh';
+    border: '3px solid red';
+    pointer-events: none;
+
+}
+
+.card-interaction-container {
+    cursor: pointer;
+}
+
+.card-image-container {
+    position: absolute;
+    left: 5%;
+    top: 35%;
+    z-index: 10;
+}
+
+.card-discard-image-container {
+    position: absolute;
+    left: 5%;
+    top: 65%;
+    z-index: 10;
+    border-radius: 20%;
+}
+
+.player-item {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-picture-container {
+    margin-right: 1rem;
+}
+
+.player-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.word {
+    color: #555;
+}
+
+.steal-button {
+    background-color: #f25f5c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    align-self: flex-start; /* Asegura que el botón no se vaya al fondo */
+}
