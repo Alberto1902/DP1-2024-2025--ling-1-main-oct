@@ -14,7 +14,9 @@ component PieceController
 component PlayerController
 component SquareController
 component AchievementController
-
+component GenreController
+component PlatformController
+component SagaController
 }
 
 package "Business Logic Layer" {
@@ -28,7 +30,10 @@ package "Business Logic Layer" {
     component PieceService
     component PlayerService
     component SquareService
-component AuthoritiesService
+    component AuthoritiesService
+    component GenreService
+    component PlatformService
+    component SagaService
 }
 
 package "Resource Layer" {
@@ -41,7 +46,10 @@ package "Resource Layer" {
     component SquareRepository
     component AchievementRepository
     component UserRepository
-component AuthoritiesRepository
+    component AuthoritiesRepository
+    component GenreRespository
+    component PlatformRepository
+    component SagaRepository
 }
 
 ' Definir relaciones entre las capas
@@ -63,6 +71,9 @@ PlayerController ..> GameSessionService
 SquareController ..> SquareService
 UserController ..> UserService
 UserController ..> AchievementService
+GenreController ..> GenreService
+PlatformController ..> PlatformService
+SagaController ..> SagaService
 UserService <.. AuthService
 AuthoritiesService <.. AuthService
 
@@ -77,4 +88,7 @@ PlayerService ..> PlayerRepository
 SquareService ..> SquareRepository
 UserService ..> UserRepository
 AuthoritiesService ..> AuthoritiesRepository
+GenreService ..> GenreRepository
+PlatformService ..> PlatformRepository
+SagaService ..> SagaRepository
 @enduml
